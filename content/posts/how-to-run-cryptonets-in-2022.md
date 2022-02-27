@@ -1,8 +1,13 @@
 ---
 title: "How to Run CryptoNets in 2022"
 date: 2022-02-23T23:53:17+08:00
+categories: ["Develop"]
 draft: false
 ---
+
+This is a posty about how to install and run CryptoNets in 2022.
+<!--more-->
+
 
 # Introduction
 More and more companies have built applications based on big data techniques in recent years. To have a well-performance model, collecting data has become a must. However, the consciousness of privacy raises in many people’s minds, and they are less willing to give data to companies. As a result, data protection has become a vital technique to balance the dilemma between big data and data privacy.
