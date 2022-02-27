@@ -5,7 +5,7 @@ categories: ["Develop"]
 draft: false
 ---
 
-This is a posty about how to install and run CryptoNets in 2022.
+This is a post about how to install and run CryptoNets in 2022.
 <!--more-->
 
 
