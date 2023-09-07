@@ -6,6 +6,6 @@ I'm Huan-Chih Wang (Jimmy), a Ph.D candidate in National Taiwan University. My r
 
 ### Contact Information (聯絡方式)
 
-Email: huanchihwang@icloud.com
+Email: whcjimmy@icloud.com
 
-X (Twitter): huanchihwang
+X (Twitter): whcjimmy
