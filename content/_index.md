@@ -1,4 +1,4 @@
 ---
 title: "Home"
 ---
-This is a Huan-Chih Wang's Workspace.
+存放我的一些所思所想。

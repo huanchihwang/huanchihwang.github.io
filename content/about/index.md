@@ -1,7 +1,9 @@
 # About
 
-可以藉由以下方式找到我
+王煥智，Huan-Chih Wang，Jimmy，目前是個在學的博士生。
 
-Email: whcjimmy@icloud.com
+可以藉由以下方式找到我：
 
-X (Twitter): whcjimmy
+Email: huanchihwang@icloud.com
+
+X (Twitter): huanchihwang
