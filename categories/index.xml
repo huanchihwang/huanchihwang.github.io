@@ -1,1 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on 知日</title><link>https://whcjimmy.github.io/categories/</link><description>Recent content in Categories on 知日</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Wed, 23 Feb 2022 23:53:17 +0800</lastBuildDate><atom:link href="https://whcjimmy.github.io/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Develop</title><link>https://whcjimmy.github.io/categories/develop/</link><pubDate>Wed, 23 Feb 2022 23:53:17 +0800</pubDate><guid>https://whcjimmy.github.io/categories/develop/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on 知日</title><link>https://whcjimmy.github.io/categories/</link><description>Recent content in Categories on 知日</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Wed, 23 Feb 2022 23:53:17 +0800</lastBuildDate><atom:link href="https://whcjimmy.github.io/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Run CryptoNets in 2022</title><link>https://whcjimmy.github.io/how-to-run-cryptonets-in-2022/</link><pubDate>Wed, 23 Feb 2022 23:53:17 +0800</pubDate><guid>https://whcjimmy.github.io/how-to-run-cryptonets-in-2022/</guid><description>&lt;p>This is a post about how to install and run CryptoNets in 2022.&lt;/p>
+&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>More and more companies have built applications based on big data techniques in recent years. To have a well-performance model, collecting data has become a must. However, the consciousness of privacy raises in many people’s minds, and they are less willing to give data to companies. As a result, data protection has become a vital technique to balance the dilemma between big data and data privacy.&lt;/p>
+&lt;p>In 2016, Microsoft Research published CryptoNets [1], the first paper to infer a CNN model in the encrypted domain. The main idea of CryptoNets is to infer encrypted data in the encrypted domain, and the protocol is under a client who has sensible data and a company that has a CNN model. At the beginning of the protocol, a client encrypts his data with his public key and sends it to the company. Next, when the company receives the encrypted image, he infers the image in the encrypted domain and sends the result back to the client. After the client gets the encrypted result, he decrypts the result with his private key, and now he gets the meaning of the result. Because the whole process is in the encrypted domain, the company doesn’t have any information about this image. As a result, CryptoNets can effectively protect data privacy.&lt;/p>
+&lt;p>Although CryptoNets is good for beginners to know how to infer data in the encrypted domain, after Microsoft Research released related code in 2019, the code doesn’t be updated anymore. In this post, I will tell you how to run CryptoNets in 2022.&lt;/p>
+&lt;h1 id="prerequisites">Prerequisites&lt;/h1>
+&lt;p>Before we start, we need the following things:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Visual Studio 2022&lt;/strong>&lt;/p>
+&lt;p>Microsoft Research wrote CryptoNets in C#, so we need VS to compile the project. The installation instructions are in the next section.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SEAL Repo&lt;/strong>&lt;/p>
+&lt;p>I&amp;rsquo;ve updated the setting files for VS 2022, so I recommend you clone the branch &lt;code>cryptonets_with_vs_2022&lt;/code> of &lt;a href="https://github.com/whcjimmy/SEAL/tree/cryptonets_with_vs_2022">my fork&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>CryptoNets Repo&lt;/strong>&lt;/p>
+&lt;p>You can get the repo from &lt;a href="https://github.com/microsoft/CryptoNets">here&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>NuGet Package command line tool&lt;/strong>&lt;/p>
+&lt;p>Following the official manual, we need to pack SEAL Library into a NuGet package file. You can get the command-line tool from &lt;a href="https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools">here&lt;/a>.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-150732.png" alt="image_7">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>MNIST Dataset&lt;/strong>&lt;/p>
+&lt;p>You can find the dataset from &lt;a href="http://yann.lecun.com/exdb/mnist/">here&lt;/a>. Both training dataset and testing dataset are needed.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="installation-guides">Installation Guides&lt;/h1>
+&lt;p>If eveything is set up, let&amp;rsquo;s get started!&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Install visual studio 2022&lt;/strong>&lt;/p>
+&lt;p>You need to install VS 2022 with the following requirements:&lt;/p>
+&lt;ul>
+&lt;li>Desktop Development with C++&lt;/li>
+&lt;li>.Net Desktop Development&lt;/li>
+&lt;li>C++ Cmake tools for Windows&lt;/li>
+&lt;li>C++ Cmake tools for Linux&lt;/li>
+&lt;li>.Net Framework 4.8&lt;/li>
+&lt;li>.Net Framework 4.8 targeting pack&lt;/li>
+&lt;li>.Net Core 2.1 Runtime (out of support)
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-162559.png" alt="image_1">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-162613.png" alt="image_2">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-162626.png" alt="image_3">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-162646.png" alt="image_4">&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Compile SEAL Library&lt;/strong> (the folloing steps are under SEAL Repo)&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Use VS to open &lt;code>./donet/src/SEALNET.csproj&lt;/code> and accept all review solution actions.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-202909.png" alt="image_5">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-202939.png" alt="image_6">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Build the following three projects after setting the configuration as &lt;code>Release&lt;/code> and the platform as &lt;code>x64&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>./native/src/SEAL.vcxproj&lt;/code>&lt;/li>
+&lt;li>&lt;code>./dotnet/native/SEALNetNative.vcxproj&lt;/code>&lt;/li>
+&lt;li>&lt;code>./dotnet/src/SEALNet.csproj&lt;/code>
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111353.png" alt="image_7">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-203125.png" alt="image_7">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111444.png" alt="image_7">&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Put NuGet command-line tool into &lt;code> ./dotnet/nuget&lt;/code> folder.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111723.png" alt="image_8">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open &lt;code>./dotnet/nuget&lt;/code> with CMD and enter the following command to build nuget packages. The SEAL nupkg file is generated under &lt;code>./dotnet/nuget/Release&lt;/code>.&lt;/p>
+&lt;p>&lt;code>nuget pack SEALNet.nuspec -properties Configuration=Release -Verbosity detailed -OutputDir Release&lt;/code>
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111619.png" alt="image_9">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111704.png" alt="image_9">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Copy the SEAL nupkg file to the root directory of CryptoNets Repo.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-111814.png" alt="image_9">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Compile CryptoNets Project&lt;/strong> (the folloing steps are under CryptoNets Repo)&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Use VS to open &lt;code>./CryptoNets/CryptoNets.sln&lt;/code> and updfatre the .Net Framework version.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-203947.png" alt="image_10">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-204004.png" alt="image_11">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Follow &lt;code>Tool -&amp;gt; Nuget Package Manager -&amp;gt; Manage NuGet Packages for Solution&lt;/code> to import SEAL nupkg file.&lt;/p>
+&lt;p>If you cannot find the SEAL nupgk file, you may need to restart visual studio.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-205028.png" alt="image_12">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Build DataPreprocess and CryptoNets projects after set the configuration as &lt;code>Debug&lt;/code> and the platform as &lt;code>x64&lt;/code>, .
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-205224.png" alt="image_13">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-205241.png" alt="image_14">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-204047.png" alt="image_15">
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-24-153204.png" alt="image_15">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Put the MNIST dataset files into &lt;code>./bin/x64/Debug/&lt;/code>.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-205913.png" alt="image_16">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Run CryptoNets&lt;/strong> (the folloing steps are also under CryptoNets Repo)&lt;/p>
+&lt;ol>
+&lt;li>Open CMD and cd to &lt;code>./bin/x64/Debug&lt;/code>.&lt;/li>
+&lt;li>Execute &lt;code>DataPreprocess.exe MNIST&lt;/code> to generate &lt;code>MNIST-28-28-test.txt&lt;/code> for CryptoNets.exe.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-210014.png" alt="image_17">&lt;/li>
+&lt;li>Execute &lt;code>CryptoNets.exe&lt;/code>. This program will train a CNN model first and start to infer images in the encrypted domain.
+&lt;img src="https://whcjimmy.github.io/images/how-to-run-cryptonets-in-2022/2022-02-21-210425.png" alt="image_18">&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="conclusion">Conclusion&lt;/h1>
+&lt;p>This post showed how to run CryptoNets with visual studio 2022. If you are interested in this research topic, there are other applications you can also try in the CryptoNets repo.&lt;/p>
+&lt;h1 id="references">References&lt;/h1>
+&lt;ol>
+&lt;li>&lt;a href="https://proceedings.mlr.press/v48/gilad-bachrach16.html">CryptoNets&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/whcjimmy/SEAL/tree/CryptoNets_with_vs_2022">My fork of Microsoft SEAL Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/microsoft/SEAL">The offical repo of SEAL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/microsoft/CryptoNets">The offical repo of CryptoNets&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Hello World</title><link>https://whcjimmy.github.io/hello-world/</link><pubDate>Wed, 23 Feb 2022 20:54:25 +0800</pubDate><guid>https://whcjimmy.github.io/hello-world/</guid><description>&lt;p>Hello World!&lt;/p></description></item></channel></rss>
