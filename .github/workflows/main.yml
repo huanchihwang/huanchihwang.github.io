@@ -21,8 +21,9 @@ jobs:
           # extended: true  # 如果是使用extended版本的務必取消註解。
 
       - name: Build
-        run: ls
-        run: hugo --minify
+        run: 
+          ls 
+          hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
