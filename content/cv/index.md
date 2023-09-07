@@ -1,4 +1,5 @@
 # Huan-Chih Wang (王煥智)
+I'm Huan-Chih Wang (Jimmy), a Ph.D candidate in National Taiwan University. My research area focuses on Machine Learning and Data Security.
 
 ## Education
 2023-2024 **Research Visit** in TU Darmstadt, Germany.
