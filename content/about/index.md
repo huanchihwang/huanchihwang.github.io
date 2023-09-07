@@ -4,4 +4,4 @@
 
 Email: whcjimmy@icloud.com
 
-X: whcjimmy
+X (Twitter): whcjimmy
